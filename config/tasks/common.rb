@@ -12,3 +12,9 @@ task :createlogs do
 	queue! %[mkdir -p "#{deploy_to}/logs"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/logs"]
 end
+
+task :bootstrap do
+	# Create Shared directory
+	queue! %[mkdir -p "#{deploy_to}/shared"]
+	queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared"]
+end
